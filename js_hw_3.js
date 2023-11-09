@@ -33,4 +33,4 @@ console.log(plusString); // тут теж нічого не треба роби�
 //-----------------------------------------------
 const numberPlusString = Number('30') + 5; // тут отримуємо 35 , метод Number перетворює cтроку "30" в число.
 
-console.log(`'answer' + ' is: ' + ${numberPlusString}`); 
+console.log(`answer is: ${numberPlusString}`); 
