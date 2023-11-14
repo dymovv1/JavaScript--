@@ -34,7 +34,7 @@ function numberDivisible () {
     }   
 }
 
-// numberDivisible();
+numberDivisible();
 
 
 /* --------------------------------------------------------------- */
@@ -66,10 +66,10 @@ function checkTheType() {
         alert('You entered a boolean');
     } else if (digitPattern.test(promptValueCheckType)) {
         alert('You entered a number');
+    } else if (promptValueCheckType === '') {
+        alert('Unknown data type (empty)');
     } else if (typeof promptValueCheckType === typeof String()) {
         alert('You entered a string');
-    } else {
-        alert('Unknown data type');
     }
 
 
