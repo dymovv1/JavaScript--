@@ -29,7 +29,7 @@ function numberDivisible () {
         alert('Fizz');
     } else if (promptValue % 5 === 0) {
         alert('Buzz');
-    } else if (!(promptValue % 3 === 0 && !promptValue & 5 === 0)) {
+    } else if (!(promptValue % 3 === 0 && !promptValue % 5 === 0)) {
         alert('Non Divisible');
     }   
 }
