@@ -7,21 +7,21 @@
 // Якщо введене число менше від 123 - вивести текстове Should continue та продовжувати запитувати користувача про введення далі;
 // Якщо користувач ввів не числове значення - вивести текстове повідомлення Only numbers, please та знову запитувати ввести значення.
 
-while (true) {
+let userInput;
 
-    let userInput = prompt("Введіть будь-яке число:");
+do {
+    userInput = prompt("Введіть будь-яке число:");
 
     if (isNaN(userInput)) {
         alert("Тільки числа, будь ласка!");
     } else {
         if (parseInt(userInput) >= 123) {
             alert("Wow, you've ended this endless cycle!");
-            break;
         } else {
             alert("Should continue");
         }
     }
-}
+} while (parseInt(userInput) < 123);
 
 
 // -----------------------------------------------------------------------------------------------

@@ -11,43 +11,34 @@
 // Введено значення 5 та 15, результат роботи програми: Сума = 60 (5 + 7 + 9 + 11 + 13 + 15), Добуток = 80640 (6 * 8 * 10 * 12 * 14)
 // Введено значення 20 та 7, результат роботи програми: Сума = 91 (7 + 9 + 11 + 13 + 15 + 17 + 19), Добуток = 77414400 (8 * 10 * 12 * 14 * 16 * 18 * 20)
 
-let firstNumber, secondNumber;
-let isValidInput = false;
+function getUserNumberInput(promptMessage) {
+    let userInput;
+    let isValidInput = false;
 
-while (!isValidInput) {
-    firstNumber = prompt("Введіть перше число:");
+    while (!isValidInput) {
+        userInput = prompt(promptMessage);
 
-    if (!isNaN(firstNumber)) {
-        isValidInput = true;
-    } else {
-        alert("Only numbers, please");
+        if (!isNaN(userInput)) {
+            isValidInput = true;
+        } else {
+            alert("Only numbers, please");
+        }
     }
+
+    return parseInt(userInput);
 }
 
-isValidInput = false;
-
-while (!isValidInput) {
-    secondNumber = prompt("Введіть друге число:");
-
-    if (!isNaN(secondNumber)) {
-        isValidInput = true;
-    } else {
-        alert("Only numbers, please");
-    }
-}
+const firstNumber = getUserNumberInput("Введіть перше число:");
+const secondNumber = getUserNumberInput("Введіть друге число:");
 
 let sum = 0;
 let product = 1;
 
-const start = Math.min(parseInt(firstNumber), parseInt(secondNumber));
-const end = Math.max(parseInt(firstNumber), parseInt(secondNumber));
+const start = Math.min(firstNumber, secondNumber);
+const end = Math.max(firstNumber, secondNumber);
 
 for (let i = start; i <= end; i++) {
-    if (i % 2 === 0) {
-        product *= i;
-    } else {
-        sum += i;
-    }
+    i % 2 === 0 ? (product *= i) : (sum += i);
 }
 
 alert(`Сума = ${sum}, Добуток = ${product}`);
